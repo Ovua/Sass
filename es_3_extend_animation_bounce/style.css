@@ -1,0 +1,43 @@
+.bg-random {
+  background-color: #9B36A4;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem auto;
+}
+body .ball {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 5rem;
+  background-color: #CF9950;
+  animation: bounce infinite;
+  animation-duration: 1s;
+}
+@keyframes bounce {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {
+    transform: translateY(0);
+  }
+  0% {
+    transform: translatey(-60px);
+  }
+  20% {
+    transform: translatey(-45px);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

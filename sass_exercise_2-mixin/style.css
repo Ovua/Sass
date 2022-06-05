@@ -1,0 +1,49 @@
+h1 {
+  border-bottom: 0.0625rem solid blue;
+  color: green;
+  width: 20rem;
+  margin: 1rem auto;
+}
+
+div {
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  border: 0.0625rem solid red;
+}
+
+section:nth-child(2) {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+section:nth-child(2) article:nth-child(1n+1) {
+  color: blue;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  border: 0.0625rem solid;
+  border-color: green;
+}
+section:nth-child(2) article:nth-child(2n+2) {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  border: 0.0625rem solid;
+  border-color: green;
+}
+
+section:last-child article {
+  margin-top: 1rem;
+  color: green;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  border: 0.0625rem solid;
+  border-color: blue;
+}
+section:last-child p {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

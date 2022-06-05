@@ -1,0 +1,64 @@
+@use '_colors.scss' as c;
+@use '_measures.scss' as m;
+
+@mixin Article ($color, $border-color, $border) {
+    color: $color;
+    font-size: m.$size;
+    text-align: m.$alignment;
+    padding: m.$size;
+    border: m.$border;
+    border-color: $border-color;
+
+}
+
+
+@mixin Div {
+    font-size: m.$size;
+    text-align: m.$alignment;
+    padding: m.$size;
+    border: m.$border c.$r_color;
+    }
+
+@mixin Section{ 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+h1 { 
+    border-bottom: m.$border c.$b_color;
+    color: c.$g_color;
+    width: m.$width;
+    margin: m.$size auto
+}
+
+
+div { @include Div; }
+
+section:nth-child(2) { @include Section; 
+
+    article:nth-child(1n+1) {
+
+        @include Article(c.$b_color, c.$g_color, m.$border)
+    }
+    article:nth-child(2n+2) {
+
+        @include Article(c.$r_color, c.$g_color, m.$border)
+
+    }
+}
+
+section:last-child {
+
+    article {
+        margin-top: m.$size;
+        @include Article(c.$g_color, c.$b_color, m.$border)
+
+    }
+
+    p {
+        font-size: m.$footersize;
+    }
+
+
+
+}

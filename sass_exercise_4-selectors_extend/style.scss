@@ -1,0 +1,88 @@
+$r_color: red;
+$g_color: green;
+$b_color: blue;
+$footersize: 24px;
+$size: 1rem;
+$border: 1px solid;
+
+
+%h1-h2 { 
+    color: $g_color;
+    width: 40rem;
+    margin: $size auto
+}
+
+h1 {
+    @extend %h1-h2;
+    text-decoration: underline $b_color;
+}
+
+h2 {
+    @extend %h1-h2;
+    border: $border $r_color;
+    padding: $size;
+}
+
+
+@mixin Article ($color, $border-color, $border) {
+    color: $color;
+    font-size: $size;
+    text-align: center;
+    padding: $size;
+    border: $border;
+    border-color: $border-color;
+
+}
+
+@mixin Div {
+    font-size: $size;
+    text-align: center;
+    padding: $size;
+    border: $border $r_color;
+    }
+
+
+@mixin Section{ 
+    display: flex;
+    justify-content: center;
+    gap: 1rem
+}
+
+
+div { @include Div; }
+
+ section:nth-child(3) { 
+     @include Section; 
+     column-gap: 20px;
+     justify-content: center;
+
+ 
+ }    
+
+
+article {
+    &:nth-child(1n+1) {
+
+        @include Article($b_color, $g_color, $border)
+    }
+    &:nth-child(2n+2) {
+
+        @include Article($r_color, $g_color, $border)
+
+    }
+  }
+
+section {
+
+&:last-child {
+
+    article {
+        margin-top: $size;
+        @include Article($g_color,$b_color, $border)
+    }
+
+    p {
+        font-size: $footersize;
+    }
+  }
+}

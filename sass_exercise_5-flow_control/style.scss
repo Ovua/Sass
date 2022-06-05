@@ -1,0 +1,129 @@
+@use 'sass:math';
+$r_color: red;
+$g_color: green;
+$b_color: blue;
+$w_color: white;
+$bk_color: black;
+$footersize: 24px;
+$size: 1rem;
+$border: 1px solid;
+
+
+
+
+@mixin Article ($color, $border-color, $border) {
+    color: $color;
+    font-size: $size;
+    text-align: center;
+    padding: $size;
+    border: $border;
+    border-color: $border-color;
+
+}
+
+@mixin Div {
+    font-size: $size;
+    text-align: center;
+    padding: $size;
+    border: $border $r_color;
+    }
+
+@mixin divlist {
+    width: 3rem;
+    height: 3rem;
+}
+
+@mixin Section{ 
+    display: flex;
+    justify-content: center;
+    gap: 1rem
+}
+
+h1 {
+    @extend %h1-h2;
+    text-decoration: underline $b_color;
+}
+
+h2 {
+    @extend %h1-h2;
+    border: $border $r_color;
+    padding: $size;
+}
+
+
+%h1-h2 { 
+    color: $g_color;
+    width: 40rem;
+    margin: $size auto
+}
+
+
+div { @include Div; }
+
+ section:nth-child(3) { 
+     @include Section; 
+     column-gap: 20px;
+     justify-content: center;
+
+ 
+ }    
+
+section:nth-child(3) {
+        @include Section; 
+        margin-top: 2rem;
+
+div{
+@include divlist();
+$n: 5;
+@for $i from 1 to 20 { 
+    
+    @if $i == 10 { 
+    &:nth-of-type(#{$i}){
+        background-color: $b-color;
+        color: $r_color;
+        font-weight: bold;}
+} 
+        @else {
+        &:nth-of-type(#{$i}){
+            background-color: darken($w_color, $n);
+            color: lighten($bk_color, $n);
+            }
+        }  
+        $n: $n + 5;
+    }  
+}
+    
+    $values: 1rem, 2rem, 3rem;
+        @each $value in $values {
+        .fs-#{$value}{
+           font-size: $value;
+        }  
+    }
+}
+
+article {
+    &:nth-child(1n+1) {
+
+        @include Article($b_color, $g_color, $border)
+    }
+    &:nth-child(2n+2) {
+
+        @include Article($r_color, $g_color, $border)
+
+    }
+  }
+
+section {
+
+&:last-child {
+
+    article {
+        margin-top: $size;
+        @include Article($g_color,$b_color, $border)
+    }
+
+    p {
+        font-size: $footersize;
+    }
+  }
+}

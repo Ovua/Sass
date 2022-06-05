@@ -1,0 +1,40 @@
+$color-primary:   red; 
+$color-secondary: blue;
+$color-tertiary: green; 
+
+
+
+body { 
+    border: 1px solid $color-primary; 
+    padding: 5rem;
+
+h1      {
+        text-align: center;
+       color: $color-tertiary; 
+    }
+     
+        section {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+     
+
+        article {
+            border: 2px solid $color-tertiary;
+            padding: .5rem;
+            text-align: center;
+            }
+
+        article:nth-child(1n+1) {
+
+            color: $color-secondary;
+        }
+
+        article:nth-child(2n+2) {
+            color: $color-primary;
+        }      
+    }
+} 
+
+
+
+

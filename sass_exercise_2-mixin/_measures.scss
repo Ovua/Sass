@@ -1,0 +1,7 @@
+@use 'converter' as cv;
+
+$width:  cv.convert(320px);
+$border: cv.convert(1px) solid;
+$size: cv.convert(16px);
+$footersize: cv.convert(24px);
+$alignment: center;

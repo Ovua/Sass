@@ -1,0 +1,59 @@
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+@function random-hex(){
+    $rgb: '';
+    $n: 6;
+    @while $n > 0 {
+        $num_random: random(16) - 1;
+        $letters: A, B, C, D, E, F;
+        @if $num_random > 9 { 
+        $num_random: nth($letters, ($num_random - 9));
+        };
+        $rgb: str-insert($rgb, ("" + $num_random), 0);
+        $n: $n - 1;
+    }
+    @return unquote("#"+"#{$rgb}");
+    }
+
+    /* .col while souluzione 1 */
+
+$n:1;
+    @while $n <= 12 {
+        .col:nth-child(#{($n)}) {
+            background-color: random-hex();
+    }
+    $n: $n + 1;
+}
+
+
+ /* .col while soluzione 2 con indentazione */
+
+ 
+
+ .col {
+
+    $n1:1; 
+        @while $n <= 12 {
+            &:nth-child(#{$n}) {
+                background-color: random-hex();
+            }
+        }
+        $n: $n + 1
+ }
+
+
+
+
+
+     

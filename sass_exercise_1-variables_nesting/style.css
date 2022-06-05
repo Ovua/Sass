@@ -1,0 +1,25 @@
+body {
+  border: 1px solid red;
+  padding: 5rem;
+}
+body h1 {
+  text-align: center;
+  color: green;
+}
+body section {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+body section article {
+  border: 2px solid green;
+  padding: 0.5rem;
+  text-align: center;
+}
+body section article:nth-child(1n+1) {
+  color: blue;
+}
+body section article:nth-child(2n+2) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

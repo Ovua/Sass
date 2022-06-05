@@ -1,0 +1,62 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+}
+
+/* .col while souluzione 1 */
+.col:nth-child(1) {
+  background-color: #119639;
+}
+
+.col:nth-child(2) {
+  background-color: #16E01A;
+}
+
+.col:nth-child(3) {
+  background-color: #CCCB23;
+}
+
+.col:nth-child(4) {
+  background-color: #69EE14;
+}
+
+.col:nth-child(5) {
+  background-color: #4241C2;
+}
+
+.col:nth-child(6) {
+  background-color: #065560;
+}
+
+.col:nth-child(7) {
+  background-color: #C29F53;
+}
+
+.col:nth-child(8) {
+  background-color: #F56B8C;
+}
+
+.col:nth-child(9) {
+  background-color: #B2EDDF;
+}
+
+.col:nth-child(10) {
+  background-color: #C6D034;
+}
+
+.col:nth-child(11) {
+  background-color: #5FB874;
+}
+
+.col:nth-child(12) {
+  background-color: #AA06E1;
+}
+
+/* .col while soluzione 2 con indentazione */
+
+/*# sourceMappingURL=style.css.map */

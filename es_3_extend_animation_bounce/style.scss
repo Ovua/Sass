@@ -1,0 +1,68 @@
+$size: 5rem;
+
+@mixin bounce ($animation, $duration) {
+
+    animation: $animation;
+    animation-duration: $duration; 
+
+@keyframes bounce {
+        
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {transform: translateY(0);} 
+    0% {transform: translatey(-60px)}
+    20% {transform: translatey(-45px)}
+    40% {transform: translateY(-30px)} 
+    60% {transform: translateY(-15px)} 
+    80% {transform: translateY( 0px)}
+    100% {transform: translateY( 15px)}
+
+     } 
+}
+
+
+@function random-hex(){
+    $rgb: '';
+    $n: 6;
+    @while $n > 0 {
+        $num_random: random(16) - 1;
+        $letters: A, B, C, D, E, F;
+        @if $num_random > 9 { 
+        $num_random: nth($letters, ($num_random - 9));
+        };
+        $rgb: str-insert($rgb, ("" + $num_random), 0);
+        $n: $n - 1;
+    }
+    @return unquote("#"+"#{$rgb}");
+    }
+
+    // background randomico con pallina di colore randomico (entrambi differenti in maniera tale da permettere la visibilita')
+$i: 1;
+@while $i < 2 {
+.bg-random {
+    background-color: random-hex();
+}
+ $i: $i+1   
+}
+
+body {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    
+    .ball {
+        height: $size;
+        width: $size;
+        border-radius: $size;
+        background-color: random-hex();
+        @include bounce (bounce infinite, 1s);
+      
+    }
+}
+
+
+
+
+
+
+
