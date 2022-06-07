@@ -10,12 +10,14 @@ $size: 5rem;
     } 
 } 
 
-@keyframes bounce { @include bounce(0, -30px); 
+@keyframes bounce { 
+@include bounce(0, -30px); 
 } 
 
 .bounce { 
-animation-duration: 1s; animation-name: bounce; 
-}"
+animation-duration: 1s; 
+animation-name: bounce; 
+}
 
 
 @function random-hex(){
